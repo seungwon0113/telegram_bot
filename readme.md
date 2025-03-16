@@ -76,5 +76,3 @@ CHAT_ID=chat_id
 ```bash
 python bot.py
 ```
-
-
