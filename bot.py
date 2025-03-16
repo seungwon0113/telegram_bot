@@ -39,7 +39,7 @@ class TelegramBot:
         except (IndexError, AttributeError):  # 구체적인 예외 처리
             await update.message.reply_text("일정 추가 실패! 형식을 확인해주세요.\n예: /add 2024-03-20 점심약속")
     
-    async def list_schedules(self, update):
+    async def list_schedules(self, update, context):
         if not update.message:
             return
         response = await self.service.list_schedules(update.effective_user.id)
