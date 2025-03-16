@@ -2,10 +2,9 @@
 
 <div align="center">
   
-![Python](https://img.shields.io/badge/python-3.13-blue.svg)
-![Telegram](https://img.shields.io/badge/Telegram-Bot-blue.svg)
-![SQLite](https://img.shields.io/badge/SQLite-3-blue.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/)
+[![Telegram](https://img.shields.io/badge/Telegram-Bot-blue.svg)](https://core.telegram.org/bots/api)
+[![SQLite](https://img.shields.io/badge/SQLite-3-blue.svg)](https://www.sqlite.org/)
 
 텔레그램을 통해 간편하게 일정을 관리할 수 있는 봇입니다.
 
@@ -23,16 +22,16 @@
 ## 🛠 기술 스택
 
 ### 언어 및 프레임워크
-- ![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=flat&logo=python&logoColor=white)
-- ![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=flat&logo=telegram&logoColor=white)
+- [![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+- [![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4?style=flat&logo=telegram&logoColor=white)](https://core.telegram.org/bots/api)
 
 ### 데이터베이스
-- ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)
+- [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 
 ### 도구 및 라이브러리
-- ![python-telegram-bot](https://img.shields.io/badge/python--telegram--bot-latest-blue)
-- ![python-dotenv](https://img.shields.io/badge/python--dotenv-latest-brightgreen)
-- ![nest-asyncio](https://img.shields.io/badge/nest--asyncio-latest-yellowgreen)
+- [![python-telegram-bot](https://img.shields.io/badge/python--telegram--bot-latest-blue)](https://python-telegram-bot.org/)
+- [![python-dotenv](https://img.shields.io/badge/python--dotenv-latest-brightgreen)](https://pypi.org/project/python-dotenv/)
+- [![nest-asyncio](https://img.shields.io/badge/nest--asyncio-latest-yellowgreen)](https://pypi.org/project/nest-asyncio/)
 
 ## ✨ 주요 기능
 
