@@ -42,6 +42,7 @@
 | `/add [날짜] [내용]` | 새로운 일정 추가 |
 | `/list` | 등록된 일정 목록 보기 |
 | `/delete [번호]` | 일정 삭제 |
+| `/mail jungseungwon0113@gmail.com [제목] [내용]` | 메일 보내기 |
 
 
 <div align="center">
@@ -75,4 +76,9 @@ CHAT_ID=chat_id
 ### 실행 방법
 ```bash
 python bot.py
+```
+
+### Issue
+```bash
+아직 이메일 기능이 앱에 등록한 이메일로만 보낼 수 있다.
 ```
