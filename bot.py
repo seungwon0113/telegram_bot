@@ -19,7 +19,8 @@ class TelegramBot:
             "다음 명령어를 사용할 수 있습니다:\n"
             "/add 2024-03-20 점심약속 - 새로운 일정 추가\n"
             "/list - 모든 일정 보기\n"
-            "/delete 1 - 1번 일정 삭제"
+            "/delete 1 - 1번 일정 삭제\n"
+            "/mail 이메일주소 제목 내용 - 이메일 보내기"
         )
     
     async def add_schedule(self, update, context):
@@ -45,6 +46,7 @@ class TelegramBot:
         response = await self.service.list_schedules(update.effective_user.id)
         await update.message.reply_text(response)
     
+    # 
     async def delete_schedule(self, update, context):
         if not update.message:
             return
@@ -58,6 +60,28 @@ class TelegramBot:
         except (IndexError, AttributeError):  # 구체적인 예외 처리
             await update.message.reply_text("삭제 실패! 형식을 확인해주세요.\n예: /delete 1")
     
+    async def google_send_mail(self, update, context):
+        if not update.message:
+            return
+            
+        try:
+            # 명령어 형식: /mail 이메일주소 제목 내용
+            to_email = context.args[0]
+            subject = context.args[1]
+            body = ' '.join(context.args[2:])
+            
+            response = await self.service.send_mail(
+                to_email=to_email,
+                subject=subject,
+                body=body
+            )
+            await update.message.reply_text(response)
+        except (IndexError, AttributeError):
+            await update.message.reply_text(
+                "이메일 전송 실패! 형식을 확인해주세요.\n"
+                "예: /mail recipient@example.com 회의알림 내일 2시에 회의가 있습니다"
+            )
+
     async def handle_message(self, update, context):
         if not update.message:
             return
@@ -75,6 +99,7 @@ class TelegramBot:
         app.add_handler(CommandHandler("add", self.add_schedule))
         app.add_handler(CommandHandler("list", self.list_schedules))
         app.add_handler(CommandHandler("delete", self.delete_schedule))
+        app.add_handler(CommandHandler("mail", self.google_send_mail))
         
         # 일반 메시지 핸들러 등록
         app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, self.handle_message))
@@ -85,8 +110,5 @@ class TelegramBot:
         await app.run_polling(drop_pending_updates=True)
 
 if __name__ == '__main__':
-    try:
-        bot = TelegramBot()
-        asyncio.run(bot.run())
-    except KeyboardInterrupt:
-        print("봇이 종료되었습니다.") 
+    bot = TelegramBot()
+    asyncio.run(bot.run())
