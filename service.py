@@ -12,8 +12,8 @@ class ScheduleService:
             if self.db.add_schedule(user_id, date, content):
                 return f"일정이 추가되었습니다!\n날짜: {date}\n내용: {content}"
             return "일정 추가에 실패했습니다."
-        except Exception:
-            return "일정 추가 실패! 형식을 확인해주세요.\n예: /add 2024-03-20 점심약속"
+        except Exception as e:
+            return f"일정 추가 실패! 오류: {str(e)}\n예: /add 2024-03-20 점심약속"
 
     # 일정 조회    
     async def list_schedules(self, user_id: int) -> str:
